@@ -64,4 +64,20 @@
 				, now()
 			)
  	</insert>
+ 	<update id="updateReviewById" parameterType="map">
+ 		update`new_review`
+ 		set
+ 			`review` = #{review}
+ 			, `updatedAt` = now()
+ 		where
+ 		`id` = #{id}
+ 	</update>
+ 	
+ 	<delete id="deleteReviewById" parameterType="int">
+		delete
+		from
+			`new_review`
+		where
+			`id`=#{id} 	
+ 	</delete>
  </mapper>
